@@ -15,3 +15,10 @@
 - Euan working on Object/class diagrams
 - Andy working on Faker library
 - Sam working on user needs table
+
+2pm
+
+- Richard working on css
+- Euan working on back end
+- Andy working on Faker library
+- Sam working on user journey table
