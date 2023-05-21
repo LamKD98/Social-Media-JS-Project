@@ -3,8 +3,8 @@ import CommentCard from './CommentCard';
 
 const PostCard = ({post, user, users, comment}) => {
 
-    console.log(user);
-    console.log(comment);
+    // console.log(user);
+    // console.log(comment);
 
     return (
         <div className='post-card'>
