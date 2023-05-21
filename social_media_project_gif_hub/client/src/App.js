@@ -5,8 +5,10 @@ import HomePage from './HomePage';
 import ProfileList from './ProfileList';
 import PostList from './PostList';
 
+
 function App() {
   return (
+
     <Router>
       <NavBar />
       <Switch>
