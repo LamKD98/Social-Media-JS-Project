@@ -35,13 +35,13 @@ function HomePage() {
             {posts.map(post => (
                 <div key={post._id}>
                     <h3>{post.title}</h3>
-                    <p>{post.content}</p>
+                    <p>{post.text}</p>
                 </div>
             ))}
             <h2>Comments:</h2>
             {comments.map(comment => (
                 <div key={comment._id}>
-                    <p>{comment.content}</p>
+                    <p>{comment.text}</p>
                 </div>
             ))}
         </div>
