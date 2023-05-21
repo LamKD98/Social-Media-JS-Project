@@ -15,6 +15,12 @@ const FeedServices = {
         .catch(err => console.error(err));
     },
 
+    getUser(id) {
+        return fetch(usersURL + id)
+        .then(res => res.json())
+        .catch(err => console.error(err));
+    },
+
     addUser(user) {
         return fetch(usersURL, {
             method: 'POST',
@@ -55,6 +61,12 @@ const FeedServices = {
             .catch(err => console.error(err));
     },
 
+    getPostsByUser(userId) {
+        return fetch(postsURL + "?userId=" + userId)
+        .then(res => res.json())
+        .catch(err => console.error(err));
+    },
+
     addPost(post) {
         return fetch(postsURL, {
             method: 'POST',
@@ -84,15 +96,10 @@ const FeedServices = {
     },
 
     // Comments
-    getComments() {
-        return fetch(commentsURL)
-        .then(res => {
-            if (!res.ok) {
-                throw new Error(res.status);
-            }
-            return res.json();
-            })
-            .catch(err => console.error(err));
+    getCommentsByPost(postId) {
+        return fetch(commentsURL + "?postId=" + postId)
+        .then(res => res.json())
+        .catch(err => console.error(err));
     },
 
     addComment(comment) {
@@ -125,4 +132,5 @@ const FeedServices = {
 };
 
 export default FeedServices;
+
 
