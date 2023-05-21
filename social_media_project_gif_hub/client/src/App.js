@@ -1,11 +1,11 @@
 import './App.css';
-import ProfileList from './components/profiles/ProfileList';
+import PostList from './components/feed/PostList';
 
 
 function App() {
   return (
     <div className="App">
-   
+      <PostList/>
     </div>
   );
 }
