@@ -1,26 +1,26 @@
 import React from 'react';
 import CommentCard from './CommentCard';
+import GifPicker, { TenorImage } from 'gif-picker-react';
 
 const PostCard = ({post, user, users, comments, comment}) => {
 
-    const commentCardNodes = comments.map((comment) => {
-        const specificUser = users.find((user) => user.userId === comment.userId)
-        if (comments.length > 0) {
-            console.log("postid", post.userId);
-            console.log("comment id" , comment.postId);
-            console.log("comments" , comments);
-            const specificComment = comments.find((comment) => post.postId === comment.postId)
-            if (specificComment) {
-                return (
-                    <CommentCard
-                        comment={specificComment}
-                        user={specificUser}
-                        post={post}
-                    />
-                )
-        } else return null
-    } else return null
-    })
+
+    console.log(post.gifUrl)
+
+    const commentCardNodes = () => {
+        const postComments = comments.filter((comment) =>  post.postDate === comment.postDate)
+        console.log(postComments);
+        const postCommentNodes = postComments.map((postComment, index) => {
+            return (
+                <CommentCard
+                    key={index}
+                    comment={postComment}
+           
+                />
+        )})
+        return postCommentNodes
+    }
+
         
     
 
@@ -29,7 +29,14 @@ const PostCard = ({post, user, users, comments, comment}) => {
             <h2>{user.fname}:</h2>
             <p>{post.text}</p>
 
-            {commentCardNodes}
+            <img
+                src={post.gifUrl}
+                alt="Selected GIF"
+            />
+
+            {commentCardNodes()}
+            {/* <CommentForm / >  */}
+
         </div>
     );
 }

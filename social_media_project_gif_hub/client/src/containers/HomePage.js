@@ -2,10 +2,11 @@ import './Homepage.css'
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
 
-function Login() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [loggedIn, setLoggedIn] = useState(false);
+
+import React, { useEffect, useState } from 'react';
+import FeedServices from '../services/FeedServices';
+import PostForm from '../components/feed/PostForm';
+
 
     const handleLogin = () => {
         // Perform login logic here, e.g., making an API call to validate credentials
@@ -62,37 +63,33 @@ function Login() {
     }
 
     return (
-        <div className="create">
-        <h1>Create Account</h1>
-        <input
-            type="text"
-            placeholder="First Name"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-        />
-        <br />
-        <input
-            type="text"
-            placeholder="Last Name"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-        />
-        <br />
-        <input
-            type="text"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-        />
-        <br />
-        <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-        />
-        <br />
-        <button className="create-button" onClick={handleCreateAccount}>Create Account</button>
+
+        <div>
+            <h1> GifHub </h1>
+            <h2>Users:</h2>
+            {users.map(user => (
+                <div key={user._id}>
+                    <h3>{user.fname} {user.lname}</h3>
+                    <p>Email: {user.email}</p>
+                </div>
+            ))}
+
+            <h1>Create Post</h1>
+            <PostForm/>
+            <h2>Posts:</h2>
+            {posts.map(post => (
+                <div key={post._id}>
+                    <h3>{post.title}</h3>
+                    <p>{post.text}</p>
+                </div>
+            ))}
+            <h2>Comments:</h2>
+            {comments.map(comment => (
+                <div key={comment._id}>
+                    <p>{comment.text}</p>
+                </div>
+            ))}
+
         </div>
     );
     }

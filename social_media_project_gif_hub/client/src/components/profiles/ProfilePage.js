@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import UserCard from '../profiles/UserCard';
+
+import UserCard from './UserCard';
+
 import FeedService from '../../services/FeedServices';
 
 function ProfilePage({ match }) {
