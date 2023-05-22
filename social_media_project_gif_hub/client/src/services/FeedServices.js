@@ -96,6 +96,17 @@ const FeedServices = {
     },
 
     // Comments
+    getComments() {
+        return fetch(commentsURL)
+        .then(res => {
+            if (!res.ok) {
+                throw new Error(res.status);
+            }
+            return res.json();
+            })
+            .catch(err => console.error(err));
+    },
+
     getCommentsByPost(postId) {
         return fetch(commentsURL + "?postId=" + postId)
         .then(res => res.json())

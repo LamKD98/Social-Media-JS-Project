@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import FeedServices from '../services/FeedService';
+import FeedServices from '../services/FeedServices';
 
 function HomePage() {
     const [users, setUsers] = useState([]);

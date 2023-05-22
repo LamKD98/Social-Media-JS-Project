@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import UserCard from './profiles/UserCard';
-import FeedService from '../services/FeedService';
+import UserCard from '../profiles/UserCard';
+import FeedService from '../../services/FeedServices';
 
 function ProfilePage({ match }) {
   const [user, setUser] = useState(null);
