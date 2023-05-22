@@ -13,7 +13,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-   grid-gap: 1em;
+   grid-gap: 10px;
    padding-right: 34rem;
   }
 
@@ -24,10 +24,13 @@ input {
     border-bottom: 1px solid;
   }
 
-a:link {
+a {
     color: transparent;
     outline: none;
+}
 
+.create-button {
+    text-decoration: none;
 }
 
   button {
@@ -39,6 +42,11 @@ a:link {
     width: 10rem;
   }
 
+  .link-button {
+    width: 135px;
+    margin-left: 10px;
+  }
+
   button > a {
     color: black;
   }
@@ -47,3 +55,27 @@ a:link {
      margin-left: 35px;
      margin-bottom: 3rem;
    }
+
+   /* create profile */
+
+   .create {
+    display: grid;
+    width: 25rem;
+    height: 30rem;
+    background-color: white;
+    border: 5px solid;
+    box-shadow: 10px 10px turquoise;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   grid-gap: 1em;
+   text-align: center;
+  }
+
+  .create > button {
+    margin-left: 115px;
+    margin-bottom: 30px;
+    background: salmon;
+    border: 2px solid;
+  }
