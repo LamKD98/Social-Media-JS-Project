@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NavBar from './containers/NavBar';
-import HomePage from './containers/HomePage'
+import HomePage from './containers/HomePage';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ProfilePage from './components/profiles/ProfilePage';
-import PostList from './components/feed/PostList'
+import PostList from './components/feed/PostList';
 import FeedServices from './services/FeedServices';
 
 function App() {
@@ -22,19 +22,15 @@ function App() {
   if (posts.length === 0 ) return "loading"
   if (users.length === 0 ) return "loading"
   if (comments.length === 0 ) return "loading"
-
+  
 
   return (
-    <Router>
       <div className="App">
-        <NavBar />
-        <Routes>
-          <Route exact path="/" element={<HomePage />} />
-          <Route path="/profile/:id" element={<ProfilePage />} />
-          <Route path="/posts" element ={<PostList posts={posts} users={users} comments={comments}/>} />
-        </Routes>
+        <Router>
+          <NavBar />
+          <HomePage posts={posts} users={users} commente={comments}/>
+        </Router>
       </div>
-    </Router>
   );
 }
 
