@@ -11,15 +11,13 @@ const PostCard = ({post, user, users, comments, comment}) => {
             console.log("comments" , comments);
             const specificComment = comments.find((comment) => post.postId === comment.postId)
             if (specificComment) {
-
-
-            return (
-                <CommentCard
-                    comment={specificComment}
-                    user={specificUser}
-                    post={post}
-                />
-            )
+                return (
+                    <CommentCard
+                        comment={specificComment}
+                        user={specificUser}
+                        post={post}
+                    />
+                )
         } else return null
     } else return null
     })
