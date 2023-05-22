@@ -3,43 +3,29 @@ import PostCard from './PostCard';
 import FeedServices from '../../services/FeedServices';
 import CommentCard from './CommentCard';
 
-const PostList = () => {
+const PostList = ({posts, users, comments}) => {
 
-    const [posts, setPosts] = useState([]);
-    const [users, setUsers] = useState([]);
-    const [comments, setComments] = useState([]);
-    // console.log(posts);
-    // console.log(users);
-    // console.log(comments);
+    const postCardNodes = posts.map((post) => {
+        const specificUser = users.find((user) => user.userId == post.userId)
+        const specificComment = comments.find((comment) => comment.postId === post.postId)
+        const commentsByPost = comments.filter((comment) => comment.postId === post.postId)
 
-    useEffect(() => {
-        FeedServices.getPosts().then(setPosts);
-    }, []);
-    
-    useEffect(() => {
-        FeedServices.getUsers().then(setUsers);
-    }, []);
 
-    useEffect(() => {
-        FeedServices.getComments().then(setComments);
-    }, []);
-    
+        return (     
+            <PostCard 
+            key={post.userId}
+            users={users}
+            post={post}
+            user={specificUser}
+            comment={specificComment}
+            comments={commentsByPost}
+        />
+
+    )})
 
     return (
         <div>
-            {posts.map(post => (
-                <PostCard 
-                    key={post.userId}
-                    users={users}
-                    post={post}
-                    user={users.find((user) => (
-                        user.userId === post.userId
-                    ))}
-                    comment={comments.find((comment) => (
-                        comment.postId === post.postId 
-                    ))}
-                />
-            ))}
+            {postCardNodes}
         </div>
     );
 }

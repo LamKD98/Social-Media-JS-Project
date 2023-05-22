@@ -55,17 +55,24 @@ db.dropDatabase()
 
 db.comments.insertMany([
     {
-        text: "sample-gif-url-here",
+        text: "I love commenting on things",
         commentDate: Date("2023-05-19T13:24:00Z"),
         userId: "2023-05-19T11:00:00Z",
         postId: "2023-05-19T14:08:14Z",
         commentId: "2023-05-19T13:24:00Z"
     },
     {
-        text: "sample-gif-url-here",
+        text: "I also love commenting on things",
         commentDate: Date("2023-05-19T14:45:00Z"),
         userId: "2023-05-19T13:00:00Z",
         postId: "2023-05-19T14:10:03Z",
         commentId: "2023-05-19T14:45:00Z"
+    },
+    {
+        text: "I also also love commenting on things",
+        commentDate: Date("2023-05-19T14:45:00Z"),
+        userId: "2023-05-19T14:00:00Z",
+        postId: "2023-05-19T14:10:03Z",
+        commentId: "2023-05-19T15:35:00Z"
     }
 ])
