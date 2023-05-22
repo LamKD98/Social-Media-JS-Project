@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
-import FeedServices from '../services/FeedService';
+import FeedServices from '../services/FeedServices';
+import PostForm from '../components/feed/PostForm';
 
 function HomePage() {
     const [users, setUsers] = useState([]);
@@ -31,6 +32,9 @@ function HomePage() {
                     <p>Email: {user.email}</p>
                 </div>
             ))}
+
+            <h1>Create Post</h1>
+            <PostForm/>
             <h2>Posts:</h2>
             {posts.map(post => (
                 <div key={post._id}>

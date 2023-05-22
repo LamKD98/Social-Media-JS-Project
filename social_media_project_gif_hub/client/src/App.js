@@ -1,18 +1,40 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import HomePage from './pages/HomePage';
-import ProfilePage from './pages/ProfilePage';
+import React, {useState, useEffect} from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import NavBar from './containers/NavBar';
+import HomePage from './containers/HomePage'
+import ProfilePage from './components/profiles/ProfilePage';
+import PostList from './components/feed/PostList'
+import FeedServices from './services/FeedServices';
+import PostContainer from './containers/PostContainer';
 
 function App() {
+
+  const [posts, setPosts] = useState([]);
+  const [users, setUsers] = useState([]);
+
+  const [comments, setComments] = useState([]);
+
+  useEffect(() => {
+    FeedServices.getPosts().then((data) => setPosts(data));
+    FeedServices.getUsers().then((data) => setUsers(data));
+    FeedServices.getComments().then((data) => setComments(data));
+  
+  }, []);
+
+  if (posts.length === 0 ) return "loading"
+  if (users.length === 0 ) return "loading"
+  if (comments.length === 0 ) return "loading"
+
+
   return (
     <Router>
       <div className="App">
-        <Navbar />
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/profile/:id" component={ProfilePage} />
-        </Switch>
+        <NavBar />
+        <Routes>
+          <Route exact path="/" element={<HomePage />} />
+          <Route path="/profile/:id" element={<ProfilePage />} />
+          <Route path="/posts" element ={ <PostContainer  posts={posts} users={users} comments={comments} />} />
+        </Routes>
       </div>
     </Router>
   );
