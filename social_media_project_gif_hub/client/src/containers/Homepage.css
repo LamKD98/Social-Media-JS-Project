@@ -1,0 +1,49 @@
+body {
+    background-image: url("../../public/Images/Homepage.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: grey;
+    background-blend-mode: multiply;
+}
+
+.input-fields {
+    display: grid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   grid-gap: 1em;
+   padding-right: 34rem;
+  }
+
+input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid;
+  }
+
+a:link {
+    color: transparent;
+    outline: none;
+
+}
+
+  button {
+    background: white;
+    color: black;
+    border-radius: 5px;
+    border: none;
+    margin-top: 15px;
+    width: 10rem;
+  }
+
+  button > a {
+    color: black;
+  }
+ 
+  img {
+     margin-left: 35px;
+     margin-bottom: 3rem;
+   }

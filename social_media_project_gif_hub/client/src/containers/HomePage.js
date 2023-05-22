@@ -1,3 +1,4 @@
+import './Homepage.css'
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
 
@@ -20,8 +21,8 @@ function Login() {
     }
 
     return (
-        <div>
-        <h1>Login</h1>
+        <div className="input-fields">
+        <img src="../Images/Logo.png" width="80" height="80"></img>
         <input
             type="text"
             placeholder="Email"
@@ -38,7 +39,7 @@ function Login() {
         <br />
         <button onClick={handleLogin}>Login</button>
         <br />
-        <Link to="/create-account">Create Account</Link>
+        <button><Link to="/create-account">Create Account</Link></button>
         </div>
     );
     }
@@ -61,7 +62,7 @@ function Login() {
     }
 
     return (
-        <div>
+        <div className="input-fields">
         <h1>Create Account</h1>
         <input
             type="text"
