@@ -95,6 +95,7 @@ const FeedServices = {
             })
             .catch(err => console.error(err));
     },
+
     getCommentsByPost(postId) {
         return fetch(commentsURL + "?postId=" + postId)
         .then(res => res.json())

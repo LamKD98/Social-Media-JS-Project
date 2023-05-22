@@ -4,6 +4,7 @@ import GifPicker, { TenorImage } from 'gif-picker-react';
 
 const PostCard = ({post, user, users, comments, comment}) => {
 
+
     console.log(post.gifUrl)
 
     const commentCardNodes = () => {
@@ -19,6 +20,7 @@ const PostCard = ({post, user, users, comments, comment}) => {
         )})
         return postCommentNodes
     }
+
         
     
 
@@ -26,6 +28,7 @@ const PostCard = ({post, user, users, comments, comment}) => {
         <div className='post-card'>
             <h2>{user.fname}:</h2>
             <p>{post.text}</p>
+
             <img
                 src={post.gifUrl}
                 alt="Selected GIF"
@@ -33,6 +36,7 @@ const PostCard = ({post, user, users, comments, comment}) => {
 
             {commentCardNodes()}
             {/* <CommentForm / >  */}
+
         </div>
     );
 }

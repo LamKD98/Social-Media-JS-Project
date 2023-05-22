@@ -1,7 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
+
 import FeedServices from '../../services/FeedServices';
 import PostCard from '../feed/PostCard';
+
 
 function UserCard({ user }) {
   const [posts, setPosts] = useState([]);

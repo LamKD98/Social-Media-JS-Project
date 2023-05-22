@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NavBar from './containers/NavBar';
 import HomePage from './containers/HomePage'
@@ -6,6 +7,7 @@ import ProfilePage from './components/profiles/ProfilePage';
 import PostList from './components/feed/PostList'
 import FeedServices from './services/FeedServices';
 import PostContainer from './containers/PostContainer';
+
 
 function App() {
 
@@ -27,16 +29,16 @@ function App() {
 
 
   return (
-    <Router>
       <div className="App">
+
         <NavBar />
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route path="/profile/:id" element={<ProfilePage />} />
           <Route path="/posts" element ={ <PostContainer  posts={posts} users={users} comments={comments} />} />
         </Routes>
+
       </div>
-    </Router>
   );
 }
 

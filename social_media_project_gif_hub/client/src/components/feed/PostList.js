@@ -3,6 +3,7 @@ import PostCard from './PostCard';
 
 
 
+
 const PostList = ({posts, users, comments}) => {
 
     const postCardNodes = posts.map((post, index) => {
@@ -11,9 +12,12 @@ const PostList = ({posts, users, comments}) => {
         const commentsByPost = comments.filter((comment) => comment.postDate === post.postDate)
 
 
+
         return (     
             <PostCard 
+
             key={index}
+
             users={users}
             post={post}
             user={specificUser}

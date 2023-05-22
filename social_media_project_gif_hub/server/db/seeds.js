@@ -59,6 +59,13 @@ db.comments.insertMany([
         
     },
     {
+        text: "I also love commenting on things",
+        commentDate: Date("2023-05-19T14:45:00Z"),
+        userId: "2023-05-19T13:00:00Z",
+        postId: "2023-05-19T14:10:03Z",
+        commentId: "2023-05-19T14:45:00Z"
+    },
+    {
         text: "This is another comment",
         commentDate: "2023-05-19T14:45:00Z",
         userId: "2023-05-19T13:00:00Z",
