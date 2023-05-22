@@ -17,7 +17,7 @@ function Login() {
     };
 
     if (loggedIn) {
-        return <Navigate to="/home" />;
+        return <Navigate to="/home"/>;
     }
 
     return (
@@ -39,7 +39,7 @@ function Login() {
         <br />
         <button onClick={handleLogin}>Login</button>
         <br />
-        <button><Link to="/create-account">Create Account</Link></button>
+        <button className='link-button'><Link to="/create-account">Create Account</Link></button>
         </div>
     );
     }
@@ -62,7 +62,7 @@ function Login() {
     }
 
     return (
-        <div className="input-fields">
+        <div className="create">
         <h1>Create Account</h1>
         <input
             type="text"
@@ -92,7 +92,7 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
         />
         <br />
-        <button onClick={handleCreateAccount}>Create Account</button>
+        <button className="create-button" onClick={handleCreateAccount}>Create Account</button>
         </div>
     );
     }
