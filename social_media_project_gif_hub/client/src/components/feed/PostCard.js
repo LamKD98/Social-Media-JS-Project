@@ -30,6 +30,7 @@ const PostCard = ({post, user, users, comments, comment}) => {
         <div className='post-card'>
             <h2>{user.fname}:</h2>
             <p>{post.text}</p>
+
             {commentCardNodes}
         </div>
     );

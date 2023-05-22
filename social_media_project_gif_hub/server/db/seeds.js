@@ -38,28 +38,31 @@ db.dropDatabase()
 db.posts.insertMany([
     {
         text: "I love posts",
+        gifUrl: "sample-gif-url-here",
         postDate: Date("2023-05-19T14:08:14Z"),
         postId: "2023-05-19T14:08:14Z",
         userId: "2023-05-19T14:00:00Z"
     },
     {
         text: "I also love posts",
+        gifUrl: "another-sample-gif-url-here",
         postDate: Date("2023-05-19T14:10:03Z"),
         postId: "2023-05-19T14:10:03Z",
         userId: "2023-05-19T12:00:00Z"
     }
 ])
 
+
 use comments_hub
 db.dropDatabase()
-
 db.comments.insertMany([
     {
-        text: "I love commenting on things",
+        text: "This is a comment",
         commentDate: Date("2023-05-19T13:24:00Z"),
         userId: "2023-05-19T11:00:00Z",
         postId: "2023-05-19T14:08:14Z",
-        commentId: "2023-05-19T13:24:00Z"
+        commentId: "2023-05-19T13:24:00Z",
+        gifUrl: "sample-gif-url-here"
     },
     {
         text: "I also love commenting on things",
@@ -69,10 +72,11 @@ db.comments.insertMany([
         commentId: "2023-05-19T14:45:00Z"
     },
     {
-        text: "I also also love commenting on things",
+        text: "This is another comment",
         commentDate: Date("2023-05-19T14:45:00Z"),
-        userId: "2023-05-19T14:00:00Z",
+        userId: "2023-05-19T13:00:00Z",
         postId: "2023-05-19T14:10:03Z",
-        commentId: "2023-05-19T15:35:00Z"
+        commentId: "2023-05-19T14:45:00Z",
+        gifUrl: "another-sample-gif-url-here"
     }
-])
+]);
