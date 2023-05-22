@@ -10,6 +10,7 @@ const PostCard = ({post, user, users, comment}) => {
         <div className='post-card'>
             <h2>{user.fname}</h2>
             <p>{post.text}</p>
+            {post.gifUrl && <img src={post.gifUrl} alt="Post Gif" />}
             <CommentCard
                 comment={comment}
                 user={users.find((user) => (
