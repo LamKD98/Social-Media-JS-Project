@@ -29,7 +29,14 @@ function PostForm({ onPostCreate }) {
     const newPost = { text: postContent, gifUrl: selected.url };
     newPost["postDate"] = Date.now()
     newPost["userEmail"] = "euan@hotmail.com"
-    FeedServices.addPost(newPost)
+    FeedServices.addPost(newPost).then(() => {
+      setPostContent('');
+      setSelectedGif(null);
+      window.location.reload();
+    })
+    .catch((err) => {
+      console.error('Failed to create post', err);
+    })
     // onPostCreate(newPost);
   };
 
@@ -57,7 +64,7 @@ function PostForm({ onPostCreate }) {
 			{ toggle ? 	<div className="App"><GifPicker tenorApiKey={TENOR_API_KEY} onGifClick={setSelected} /> 		</div> : null }
 
 			
-      <button onClick={handleToggle}>Show me gifs</button>
+      <button type='submit' onClick={handleToggle}>Show me gifs</button>
 
       <input type="submit" value="Create Post" />
       </form>
