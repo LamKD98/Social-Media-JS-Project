@@ -25,7 +25,15 @@ function App() {
 
   useEffect(() => {
     setComments(comments);
-}, [comments])
+  }, [comments])
+
+  useEffect(() => {
+    setPosts(posts)
+  }, [posts])
+
+  // const addNewPost = (post) => {
+  //   setPosts([...posts, post])
+  // }
 
   const addNewComment = (comment) => {
     console.log(comment);

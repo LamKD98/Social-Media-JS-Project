@@ -31,8 +31,8 @@ const createRouter = function(collection) {
     });
     });
 
-    router.put('/:id', (req, res) => {
-    const id = req.params.id;
+    router.put('/:postDate', (req, res) => {
+    const postDate = req.params.postDate;
     const updatedData = req.body;
     delete updatedData._id;
 

@@ -6,7 +6,7 @@ const TENOR_API_KEY = 'AIzaSyA9SS1evcudEpr89ch9I4foqWMjFLNmS78';
 
 function CommentForm({ postDate, addNewComment}) {
   // const [commentContent, setCommentContent] = useState('');
-  const [commentContent, setCommentContent] = useState(null)
+  const [commentContent, setCommentContent] = useState('')
   const [selectedGif, setSelectedGif] = useState(null);
   const [toggle, setToggle] = useState(false);
 
@@ -15,10 +15,12 @@ function CommentForm({ postDate, addNewComment}) {
     const newComment = { text: commentContent, gifUrl: selectedGif ? selectedGif.url : null, postDate: postDate, userCommentEmail: "euan@hotmail.com" };
     FeedServices.addComment(newComment)
     addNewComment(newComment);
+    setCommentContent('');
   };
   if (selectedGif) {
     console.log(selectedGif.url);
   }
+
 
   const handleToggle = (e) => {
     e.preventDefault();

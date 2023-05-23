@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CommentForm from './CommentForm';
 import CommentCard from './CommentCard';
+import FeedServices from '../../services/FeedServices';
+import EditPostForm from './EditPostForm';
 
 
 const PostCard = ({post, user, users, comments, specificComment, addNewComment }) => {
 
+    const [isEditing, setIsEditing] = useState(false);
 
     console.log(post.gifUrl)
 
@@ -31,16 +34,32 @@ const PostCard = ({post, user, users, comments, specificComment, addNewComment }
         return postCommentNodes
     }
 
+    const handleEditClicked = () => {
+        setIsEditing(true);
+    }
+
+    const handlePostUpdate = (updatedPost) => {
+        setIsEditing(false);
+    }
+
     return (
+        
         <div className='post-card'>
-            <h2>{user.fname}:</h2>
-            <p>{post.text}</p>
-            <img
-                src={post.gifUrl}
-                alt="Selected GIF"
-            />
-            {commentCardNodes()}
-            <CommentForm addNewComment={addNewComment} postDate={post.postDate}/>
+            {isEditing ? (
+                <EditPostForm post={post} onUpdate={handlePostUpdate} />
+            ) : (
+                <>
+                    <h2>{user.fname}:</h2>
+                    <p>{post.text}</p>
+                    <img
+                        src={post.gifUrl}
+                        alt="Selected GIF"
+                    />
+                    <button onClick={handleEditClicked}>Edit</button>
+                    {commentCardNodes()}
+                    <CommentForm addNewComment={addNewComment} postDate={post.postDate}/>
+                </>
+                )}
         </div>
     );
 }
