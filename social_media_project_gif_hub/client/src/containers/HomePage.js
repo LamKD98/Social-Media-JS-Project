@@ -22,8 +22,8 @@ const HomePage = ({loggedInUser, setUser, addUser, users, comments, posts}) => {
 
     return (
         <Routes>
-            <Route path="/" element={<Login users={users} setUser={setUser}/>} />
-            <Route path="/create-account" element={<CreateAccount users={users} addUser={addUser} />} />      
+            <Route path="/" element={<Login setUser={setUser} users={users} addUser={addUser}/>} />
+            {/* <Route path="/create-account" element={<CreateAccount users={users} addUser={addUser} />} />       */}
         </Routes>
     );
 

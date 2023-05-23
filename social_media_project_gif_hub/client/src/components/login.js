@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { BrowserRouter as  Navigate, Link} from 'react-router-dom';
 import CreateAccount from './createAccount'
 
-const Login = ({users, setUser, loggedIn}) => { 
+const Login = ({users, setUser, loggedIn, addUser}) => { 
 
 const [email, setEmail] = useState("")
 const [password, setPassword] = useState("")
@@ -41,7 +41,7 @@ return (
     <br />
     <button onClick={handleLogin}>Login</button>
     <br />
-    <button className='link-button'><CreateAccount/></button>
+    <button className='link-button'><CreateAccount users={users} addUser={addUser} /></button>
     </div>
 )
 }
