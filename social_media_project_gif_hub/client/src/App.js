@@ -19,6 +19,12 @@ function App() {
   const [comments, setComments] = useState([]);
   const [loggedInUser, setLoggedInUser] = useState(null)
   const [showCreateAccount, setShowCreateAccount] = useState(false);
+  const [postToggle, setPostToggle] = useState(false)
+
+  useEffect(() => {
+    FeedServices.getPosts().then((data) => setPosts(data));
+  },[postToggle])
+
 
 
   useEffect(() => {
@@ -28,13 +34,13 @@ function App() {
   
   }, []);
 
-  useEffect(() => {
-    setComments(comments);
-  }, [comments])
+  // useEffect(() => {
+  //   setComments(comments);
+  // }, [comments])
 
-  useEffect(() => {
-    setPosts(posts)
-  }, [posts])
+  // useEffect(() => {
+  //   setPosts(posts)
+  // }, [posts])
 
   // const addNewPost = (post) => {
   //   setPosts([...posts, post])
@@ -58,6 +64,8 @@ function App() {
     setUser (updatedUsers)
   }
 
+  if (posts.length > 1 && users.length > 1 && comments.length > 1) 
+
   return (
       <div className="App">
         { !loggedInUser 
@@ -70,9 +78,8 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={ <HomePage loggedInUser={loggedInUser} />} />
-          <Route path="/posts" element ={ <PostContainer  posts={posts} users={users} comments={comments} />} />      
           <Route path="/profile/:id" element={<ProfilePage />} />
-          {posts.length > 1 && users.length > 1 && comments.length > 1? <Route path="/posts" element ={ <PostContainer  posts={posts} users={users} comments={comments} addNewComment={addNewComment}/>} /> : null}
+          <Route path="/posts" element ={ <PostContainer  posts={posts} users={users} comments={comments} addNewComment={addNewComment} setPostToggle={setPostToggle} postToggle={postToggle}/>} />
         </Routes>
         </Router>
           }

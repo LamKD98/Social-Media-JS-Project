@@ -2,7 +2,7 @@ import React from 'react';
 import PostForm from '../components/feed/PostForm';
 import PostList from '../components/feed/PostList';
 
-const PostContainer = ({posts, users, comments, addNewComment}) => {
+const PostContainer = ({posts, users, comments, addNewComment, setPostToggle, postToggle}) => {
 
     const onPostCreate = () => {
 
@@ -11,8 +11,8 @@ const PostContainer = ({posts, users, comments, addNewComment}) => {
     return ( 
 
         <>
-        <PostForm onPostCreate={onPostCreate}  />
-        <PostList posts={posts} users={users} comments={comments} addNewComment={addNewComment}/>
+        <PostForm onPostCreate={onPostCreate} setPostToggle={setPostToggle} postToggle={postToggle}/>
+        <PostList posts={posts} users={users} comments={comments} addNewComment={addNewComment} />
         
         </>
 
