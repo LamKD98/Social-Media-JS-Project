@@ -20,6 +20,7 @@ function PostForm({ onPostCreate }) {
   const [gifSearchResults, setGifSearchResults] = useState([]);
   const [selectedGif, setSelectedGif] = useState(null);
   const [ selected, setSelected ] = useState(null);
+  const [toggle, setToggle] = useState(false);
 
 
   const handleSubmit = (e) => {
@@ -32,6 +33,17 @@ function PostForm({ onPostCreate }) {
     // onPostCreate(newPost);
   };
 
+  const handleToggle = (e) => {
+    e.preventDefault()
+    setToggle(!toggle)
+  }
+
+  // const handleSelected = (e) => {
+  //   e.preventDefault()
+  //   console.log(e.target.value);
+  //   setSelected(setSelected);
+  // }
+
   return (
     <div>
         <form onSubmit={handleSubmit}>
@@ -39,13 +51,14 @@ function PostForm({ onPostCreate }) {
             value={postContent}
             onChange={(e) => setPostContent(e.target.value)}
           />
-		<div className="App">
 
 
-			<GifPicker tenorApiKey={TENOR_API_KEY} onGifClick={setSelected} />
+
+			{ toggle ? 	<div className="App"><GifPicker tenorApiKey={TENOR_API_KEY} onGifClick={setSelected} /> 		</div> : null }
 
 			
-		</div>
+      <button onClick={handleToggle}>Show me gifs</button>
+
       <input type="submit" value="Create Post" />
       </form>
       

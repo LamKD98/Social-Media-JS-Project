@@ -3,7 +3,7 @@ import CommentForm from './CommentForm';
 import CommentCard from './CommentCard';
 
 
-const PostCard = ({post, user, users, comments, specificComment}) => {
+const PostCard = ({post, user, users, comments, specificComment, addNewComment }) => {
 
 
     console.log(post.gifUrl)
@@ -40,7 +40,7 @@ const PostCard = ({post, user, users, comments, specificComment}) => {
                 alt="Selected GIF"
             />
             {commentCardNodes()}
-            <CommentForm onCommentCreate={onCommentCreate} postId={post.postId}/>
+            <CommentForm addNewComment={addNewComment} postDate={post.postDate}/>
         </div>
     );
 }
