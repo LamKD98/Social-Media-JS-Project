@@ -70,15 +70,15 @@ const FeedServices = {
         .then(res => res.json());
     },
     updatePost(post) {
-        return fetch(postsURL + post._id, {
+        return fetch(postsURL + '/' + post._id, { // Update the URL with post ID
             method: 'PUT',
             body: JSON.stringify(post),
             headers: {
-                'Content-Type': 'application/json'
+              'Content-Type': 'application/json'
             }
-        })
-        .then(res => res.json());
-    },
+          })
+          .then(res => res.json());
+        },   
     deletePost(id) {
         return fetch(postsURL + id, {
             method: 'DELETE'
