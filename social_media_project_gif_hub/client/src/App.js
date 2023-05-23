@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NavBar from './containers/NavBar';
-// import HomePage from './containers/HomePage'
+import HomePage from './containers/HomePage'
 import ProfilePage from './components/profiles/ProfilePage';
 // import PostList from './components/feed/PostList'
 import FeedServices from './services/FeedServices';
@@ -13,8 +13,8 @@ function App() {
 
   const [posts, setPosts] = useState([]);
   const [users, setUsers] = useState([]);
-
   const [comments, setComments] = useState([]);
+  const [loggedInUser, setLoggedInUser] = useState(null)
 
   useEffect(() => {
     FeedServices.getPosts().then((data) => setPosts(data));
@@ -27,13 +27,21 @@ function App() {
   if (users.length === 0 ) return "loading"
   if (comments.length === 0 ) return "loading"
 
+  const setUser = (newUser) => {
+    setLoggedInUser(newUser)
+  }
+
+  const addUser = (newUser) => {
+    const updatedUsers = [...users, newUser]
+    setUser (updatedUsers)
+  }
 
   return (
       <div className="App">
         <Router >
         <NavBar />
         <Routes>
-          {/* <Route exact path="/" element={<HomePage />} /> */}
+          <Route exact path="/" element={<HomePage  loggedInUser={loggedInUser} setUser={setUser} addUser = {addUser} posts={posts} users={users} comments={comments}/>} />
           <Route path="/profile/:id" element={<ProfilePage />} />
           <Route path="/posts" element ={ <PostContainer  posts={posts} users={users} comments={comments} />} />
         </Routes>
