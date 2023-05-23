@@ -23,6 +23,15 @@ function App() {
   
   }, []);
 
+  useEffect(() => {
+    setComments(comments);
+}, [comments])
+
+  const addNewComment = (comment) => {
+    console.log(comment);
+    setComments([...comments, comment])
+  }
+
   // if (posts.length === 0 ) return "loading"
   // if (users.length === 0 ) return "loading"
   // if (comments.length === 0 ) return "loading"
@@ -35,7 +44,7 @@ function App() {
         <Routes>
           {/* <Route exact path="/" element={<HomePage />} /> */}
           <Route path="/profile/:id" element={<ProfilePage />} />
-          {posts.length > 1 && users.length > 1 && comments.length > 1? <Route path="/posts" element ={ <PostContainer  posts={posts} users={users} comments={comments} />} /> : null}
+          {posts.length > 1 && users.length > 1 && comments.length > 1? <Route path="/posts" element ={ <PostContainer  posts={posts} users={users} comments={comments} addNewComment={addNewComment}/>} /> : null}
         </Routes>
         </Router>
 
