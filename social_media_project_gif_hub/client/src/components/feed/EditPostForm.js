@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import FeedServices from '../../services/FeedServices';
 
-function EditPostForm({ post, onUpdate }) {
+function EditPostForm({ post, onUpdate, postToggle, setPostToggle }) {
 
     const [editedPost, setEditedPost] = useState(post);
 
@@ -18,7 +18,8 @@ function EditPostForm({ post, onUpdate }) {
         FeedServices.updatePost(editedPost)
         .then(() => {
             onUpdate(editedPost); // Notify the parent component about the update
-            window.location.reload();
+            setPostToggle(!postToggle)
+            // window.location.reload();
         })
         .catch((error) => {
             console.error(error);
