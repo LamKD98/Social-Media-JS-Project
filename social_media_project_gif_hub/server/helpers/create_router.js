@@ -32,20 +32,24 @@ const createRouter = function(collection) {
     });
 
     router.put('/:postDate', (req, res) => {
-    const postDate = req.params.postDate;
-    const updatedData = req.body;
-    delete updatedData._id;
-
-    collection
-    .updateOne({ _id: ObjectID(id) }, { $set: updatedData })
-    .then(result => {
-        res.json(result);
-    })
-    .catch((err) => {
-        res.status(500);
-        res.json({ status: 500, error: err });
-    });
-    });
+        const postDate = req.params.postDate;
+        const updatedData = req.body;
+        const postId = updatedData._id;
+        delete updatedData._id;
+      
+        collection
+          .updateOne({ _id: ObjectID(postId) }, { $set: updatedData })
+          .then(result => {
+            res.json(result);
+          })
+          .catch((err) => {
+            res.status(500);
+            res.json({ status: 500, error: err });
+          });
+      });
+      
+      
+      
 
     router.delete('/:id', (req, res) => {
     const id = req.params.id;
