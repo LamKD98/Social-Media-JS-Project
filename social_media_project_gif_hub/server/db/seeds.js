@@ -7,24 +7,28 @@ db.users.insertMany([
         lname: "Crawford",
         email: "euan@hotmail.com",
         userAdded: "2023-05-19T14:00:00Z",
+        password: "password1",
     },
     {
         fname: "Andy",
         lname: "Lamb",
         email: "andy@hotmail.com",
         userAdded: "2023-05-19T13:00:00Z",
+        password: "password2",
     },
     {
         fname: "Sam",
         lname: "Houston",
         email: "sam@gmail.com",
         userAdded: "2023-05-19T12:00:00Z",
+        password: "password3",
     },
     {
         fname: "Richard",
         lname: "Dalrymple",
         email: "richard@yahoo.com",
         userAdded: "2023-05-19T11:00:00Z",
+        password: "password4",
     }
 ])
 
