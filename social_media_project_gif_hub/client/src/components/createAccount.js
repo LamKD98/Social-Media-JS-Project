@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { BrowserRouter, Navigate } from 'react-router-dom';
 import FeedServices from '../services/FeedServices';
 
 
@@ -39,14 +40,10 @@ const CreateAccount = ({users, setUser, addUser}) => {
             }
             addUser(newUser)
             FeedServices.addUser(newUser)
+            return <Navigate to="/feed"/>
         }
+        
     }
-
-    // const handleSubmit = (e) => {
-    //     console.log("handleSubmitCalled");
-    //     e.preventDefault()
-
-    // }
 
     return (
         <form >
