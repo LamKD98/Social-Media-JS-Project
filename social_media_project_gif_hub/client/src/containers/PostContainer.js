@@ -12,7 +12,7 @@ const PostContainer = ({posts, users, comments, addNewComment, setPostToggle, po
 
         <>
         <PostForm onPostCreate={onPostCreate} setPostToggle={setPostToggle} postToggle={postToggle}/>
-        <PostList posts={posts} users={users} comments={comments} addNewComment={addNewComment} />
+        <PostList posts={posts} users={users} comments={comments} addNewComment={addNewComment} postToggle={postToggle} setPostToggle={setPostToggle}/>
         
         </>
 
