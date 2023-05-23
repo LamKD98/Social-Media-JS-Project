@@ -4,7 +4,7 @@ import PostCard from './PostCard';
 
 
 
-const PostList = ({posts, users, comments}) => {
+const PostList = ({posts, users, comments, addNewComment}) => {
 
     const postCardNodes = posts.map((post, index) => {
         const specificComment = comments.find((comment) => comment.postDate === post.postDate)
@@ -21,8 +21,9 @@ const PostList = ({posts, users, comments}) => {
             users={users}
             post={post}
             user={specificUser}
-            comment={specificComment}
+            specificComment={specificComment}
             comments={commentsByPost}
+            addNewComment={addNewComment}
         />
 
     )})
