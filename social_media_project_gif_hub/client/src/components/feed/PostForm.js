@@ -35,10 +35,10 @@ function PostForm({ onPostCreate }) {
   return (
     <div>
         <form onSubmit={handleSubmit}>
-      <textarea
-        value={postContent}
-        onChange={(e) => setPostContent(e.target.value)}
-      />
+          <textarea
+            value={postContent}
+            onChange={(e) => setPostContent(e.target.value)}
+          />
 		<div className="App">
 
 

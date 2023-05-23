@@ -5,7 +5,7 @@ import PostList from '../components/feed/PostList';
 const PostContainer = ({posts, users, comments}) => {
 
     const onPostCreate = () => {
-      
+
     }
 
     return ( 
@@ -16,7 +16,7 @@ const PostContainer = ({posts, users, comments}) => {
         
         </>
 
-     );
+    );
 }
- 
+
 export default PostContainer;

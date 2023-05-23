@@ -21,7 +21,7 @@ const PostList = ({posts, users, comments}) => {
             users={users}
             post={post}
             user={specificUser}
-            comment={specificComment}
+            specificComment={specificComment}
             comments={commentsByPost}
         />
 
