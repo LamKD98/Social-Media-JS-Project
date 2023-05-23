@@ -5,7 +5,7 @@ import FeedServices from '../../services/FeedServices';
 import EditPostForm from './EditPostForm';
 
 
-const PostCard = ({post, user, users, comments, specificComment, addNewComment }) => {
+const PostCard = ({post, user, users, comments, specificComment, addNewComment, setPostToggle, postToggle }) => {
 
     const [isEditing, setIsEditing] = useState(false);
 
@@ -46,7 +46,7 @@ const PostCard = ({post, user, users, comments, specificComment, addNewComment }
         
         <div className='post-card'>
             {isEditing ? (
-                <EditPostForm post={post} onUpdate={handlePostUpdate} />
+                <EditPostForm post={post} onUpdate={handlePostUpdate} postToggle={postToggle} setPostToggle={setPostToggle}/>
             ) : (
                 <>
                     <h2>{user.fname}:</h2>
