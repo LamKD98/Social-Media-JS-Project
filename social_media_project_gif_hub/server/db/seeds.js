@@ -42,7 +42,7 @@ db.posts.insertMany([
         text: "I also love posts",
         gifUrl: "https://media.tenor.com/J8KeZSDe_acAAAAC/dace.gif",
         postDate: "2023-05-19T14:10:03Z",
-        userEmail: "euan@hotmail.com",
+        userEmail: "sam@gmail.com",
 
     }
 ])
@@ -56,11 +56,11 @@ db.comments.insertMany([
         postId: "2023-05-19T14:08:14Z",
         gifUrl: "sample-gif-url-here",
         postDate: "2023-05-19T14:08:14Z",
-        
+        userCommentEmail: "andy@hotmail.com"
     },
     {
         text: "I also love commenting on things",
-        commentDate: Date("2023-05-19T14:45:00Z"),
+        commentDate: "2023-05-19T14:45:00Z",
         userId: "2023-05-19T13:00:00Z",
         postId: "2023-05-19T14:10:03Z",
         commentId: "2023-05-19T14:45:00Z"
@@ -71,6 +71,7 @@ db.comments.insertMany([
         userId: "2023-05-19T13:00:00Z",
         postId: "2023-05-19T14:10:03Z",
         gifUrl: "another-sample-gif-url-here",
-        postDate: "2023-05-19T14:08:14Z",
+        postDate: "2023-05-19T14:10:03Z",
+        userCommentEmail: "richard@yahoo.com"
     }
 ]);

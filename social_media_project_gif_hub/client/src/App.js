@@ -23,9 +23,9 @@ function App() {
   
   }, []);
 
-  if (posts.length === 0 ) return "loading"
-  if (users.length === 0 ) return "loading"
-  if (comments.length === 0 ) return "loading"
+  // if (posts.length === 0 ) return "loading"
+  // if (users.length === 0 ) return "loading"
+  // if (comments.length === 0 ) return "loading"
 
 
   return (
@@ -35,7 +35,7 @@ function App() {
         <Routes>
           {/* <Route exact path="/" element={<HomePage />} /> */}
           <Route path="/profile/:id" element={<ProfilePage />} />
-          <Route path="/posts" element ={ <PostContainer  posts={posts} users={users} comments={comments} />} />
+          {posts.length > 1 && users.length > 1 && comments.length > 1? <Route path="/posts" element ={ <PostContainer  posts={posts} users={users} comments={comments} />} /> : null}
         </Routes>
         </Router>
 

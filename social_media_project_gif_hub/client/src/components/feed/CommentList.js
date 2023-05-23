@@ -10,17 +10,9 @@ const CommentList = () => {
 
     useEffect(() => {
         FeedServices.getComments().then(setComments);
-        // console.log(comments);
-    }, []);
-    
-    useEffect(() => {
         FeedServices.getPosts().then(setPosts);
-        // console.log(posts);
-    }, []);
-    
-    useEffect(() => {
         FeedServices.getUsers().then(setUsers);
-        // console.log(users);
+        // console.log(comments);
     }, []);
 
     return (
