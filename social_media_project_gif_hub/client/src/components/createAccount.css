@@ -24,8 +24,13 @@
   }
 
   .create > button {
-    margin-left: 115px;
+    margin-left: 145px;
     margin-bottom: 30px;
     background: salmon;
     border: 2px solid;
+  }
+
+  .create > input {
+    margin-left: 42px;
+    width: 300px;
   }
