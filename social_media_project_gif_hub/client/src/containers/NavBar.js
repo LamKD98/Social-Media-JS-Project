@@ -9,7 +9,7 @@ function NavBar() {
           <Link to="/" style={linkStyles}>Home</Link>
         </li>
         <li style={liStyles}>
-          <Link to="/profiles" style={linkStyles}>Profiles</Link>
+          <Link to="/profile" style={linkStyles}>Profiles</Link>
         </li>
         <li style={liStyles}>
           <Link to="/posts" style={linkStyles}>Posts</Link>
