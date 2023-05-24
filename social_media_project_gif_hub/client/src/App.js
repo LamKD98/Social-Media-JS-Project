@@ -8,6 +8,7 @@ import PostList from './components/feed/PostList'
 import FeedServices from './services/FeedServices';
 import PostContainer from './containers/PostContainer';
 import Login from './components/login';
+import UserCard from './components/profiles/UserCard';
 
 
 
@@ -75,18 +76,18 @@ function App() {
         { !loggedInUser  
         ?
           <>
-           <Route path="/" element={ <Login setUser={setUser} users={users} addUser={addUser} showCreateAccount={showCreateAccount} setShowCreateAccount={setShowCreateAccount}/>} />
-           <Route path="*" element={ "404 Page Not Found" } />
-           </>
+            <Route path="/" element={ <Login setUser={setUser} users={users} addUser={addUser} showCreateAccount={showCreateAccount} setShowCreateAccount={setShowCreateAccount}/>} />
+            <Route path="*" element={ "404 Page Not Found" } />
+          </>
           :
         <>
           <Route path="/" element={ <HomePage loggedInUser={loggedInUser} />} />
-          <Route path="/profile/:id" element={<ProfilePage />} />
+          <Route path="/profile" element={<UserCard user={loggedInUser}/>} />
           <Route path="/posts" element ={ <PostContainer  posts={posts} users={users} comments={comments} addNewComment={addNewComment} setPostToggle={setPostToggle} postToggle={postToggle} loggedInUser={loggedInUser}/>} />
           <Route path="*" element={ "404 Page Not Found" } />
         </>
         }
-         </Routes>
+        </Routes>
         </Router>
 
       </div>
