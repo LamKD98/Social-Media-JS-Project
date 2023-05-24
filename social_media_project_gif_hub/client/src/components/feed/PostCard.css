@@ -1,0 +1,14 @@
+.post-card {
+    border: 10px solid;
+    box-shadow: 10px 10px turquoise;
+    background-color: white;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+}
+
+.post-card > button {
+    
+}

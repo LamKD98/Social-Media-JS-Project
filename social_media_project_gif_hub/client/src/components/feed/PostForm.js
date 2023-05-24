@@ -1,3 +1,4 @@
+import './PostForm.css';
 import React, { useState } from 'react';
 
 import GifPicker, { TenorImage } from 'gif-picker-react';
@@ -51,14 +52,14 @@ function PostForm({ onPostCreate, setPostToggle, postToggle, loggedInUser }) {
   }
 
   return (
-    <div>
+    <div className="post-form">
         <form onSubmit={handleSubmit}>
-          <textarea
+          <textarea className='item-1'
             value={postContent}
             onChange={(e) => setPostContent(e.target.value)}
           />
-      <button type='submit' onClick={handleToggle}>Show me gifs</button>
-      <input type="submit" value="Create Post" />
+      <button className='item-2' type='submit' onClick={handleToggle}>Show me gifs</button>
+      <input className='item-3' type="submit" value="Create Post" />
       </form>
       { toggle ? 	<div className="App"><GifPicker tenorApiKey={TENOR_API_KEY} onGifClick={handleGifClick} /> 		</div> : null }
       

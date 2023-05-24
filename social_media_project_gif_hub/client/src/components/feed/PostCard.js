@@ -1,3 +1,4 @@
+import './PostCard.css'
 import React, { useState } from 'react';
 import CommentForm from './CommentForm';
 import CommentCard from './CommentCard';
@@ -14,9 +15,6 @@ const PostCard = ({post, user, users, comments, specificComment, addNewComment, 
     const commentCardNodes = () => {
         const postComments = comments.filter((comment) =>  post.postDate === comment.postDate)
 
-        
-        // console.log(commentAuthor);
-        // console.log(postComments);
         
         const postCommentNodes = postComments.map((postComment, index) => {
             let commentAuthor;
