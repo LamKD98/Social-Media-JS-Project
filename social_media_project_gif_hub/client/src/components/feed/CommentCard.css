@@ -1,12 +1,14 @@
 .comment-card {
-    padding: 2em;
+    padding: 1em;
     margin: 2em;
     border: 2px solid;
     background-color: white;
+    height: 16rem;
+    width: 28rem;
 }
 
 .comment-gif {
-    height: 15em;
-    width: 15em;
+    height: 10em;
+    width: 10em;
     padding-left: 250px;
 }
