@@ -13,5 +13,9 @@
     border: 2px solid;
     background-color: white;
     padding: 2em;
+}
 
+.post-gif {
+    height: 20em;
+    width: 30em;
 }
