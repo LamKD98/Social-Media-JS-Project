@@ -46,7 +46,7 @@ const CreateAccount = ({users, setUser, addUser}) => {
     }
 
     return (
-        <form >
+        <form className="create">
         <h1>Create Account</h1>
         <input
             type="text"

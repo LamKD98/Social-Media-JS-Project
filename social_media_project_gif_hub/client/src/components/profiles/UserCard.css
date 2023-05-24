@@ -1,0 +1,40 @@
+.profile {
+    display: grid;
+    width: 25rem;
+    height: 30rem;
+    background-color: white;
+    border: 5px solid;
+    box-shadow: 10px 10px turquoise;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    /* transform: translate(-50%, -50%); */
+   grid-gap: 1em;
+   text-align: center;
+  }
+
+  .details {
+    margin-top: 80px;
+  }
+
+  .song {
+    display: grid;
+    width: 25rem;
+    height: 30rem;
+    background-color: white;
+    border: 5px solid;
+    box-shadow: 10px 10px turquoise;
+    position: relative;
+    bottom: 63%;
+    right: 120%;
+    /* transform: translate(-50%, -50%); */
+   grid-gap: 1em;
+   text-align: center;
+  }
+
+  .profile > button {
+    margin-left: 115px;
+    margin-bottom: 30px;
+    background: salmon;
+    border: 2px solid;
+  }

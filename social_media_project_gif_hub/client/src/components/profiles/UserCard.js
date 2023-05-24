@@ -1,4 +1,4 @@
-
+import './UserCard.css'
 import React, { useState, useEffect } from 'react';
 
 import FeedServices from '../../services/FeedServices';
@@ -7,12 +7,6 @@ import PostCard from '../feed/PostCard';
 
 function UserCard({ user }) {
   const [posts, setPosts] = useState([]);
-
-  // useEffect(() => {
-  //   FeedServices.getPostsByUser(user._id)
-  //     .then(fetchedPosts => setPosts(fetchedPosts))
-  //     .catch(err => console.error(err));
-  // }, [user._id]);
 
 
 
@@ -51,32 +45,25 @@ function UserCard({ user }) {
   };
 
   return (
-    <div>
+    <div className="profile">
+      <div className="details">
     <h2>First Name: {user.fname}</h2>
     <br/>
     <h2>Last Name: {user.lname}</h2>
     <br/>
-    <p>Email: {user.email}</p>
-    
-      {/* {posts.map(post => (
-        <PostCard key={post._id} post={post} />
-      ))} */}
-    
-  
-    
-      <h1>GifHub</h1>
+    <h2>Email: {user.email}</h2>
+    </div>
+      <div className="song">
       <h1>{user.fname}'s song of the day </h1>
       <ul style={{ listStyleType: 'none', padding: 0 }}>
         {songs.map((song, index) => (
           <li key={index}>
             <img src={song.image} alt={`${song.title} - ${song.artist}`} />
-            <div>
-              <strong>{song.title}</strong> - {song.artist} - 
-             
-            </div>
+              <strong>{song.title}</strong>
           </li>
-        ))}
+            ))}
       </ul>
+      </div>
     </div>
 
 
