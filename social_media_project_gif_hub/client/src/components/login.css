@@ -5,14 +5,13 @@
     left: 50%;
     transform: translate(-50%, -50%);
    grid-gap: 10px;
-   padding-right: 10rem;
+   padding-right: 34rem;
   }
 
 input {
-    background-color: transparent;
-    border: none;
+  display: grid;
     outline: none;
-    border-bottom: 1px solid;
+    grid-gap: 5px;
   }
 
 a {
@@ -27,15 +26,15 @@ a {
   button {
     background: white;
     color: black;
-    border-radius: 5px;
-    border: none;
+    border-radius: 0;
+    border: 3px solid;
     margin-top: 15px;
-    width: 10rem;
-    margin-right: 20rem;
+    width: 7rem;
   }
 
   .link-button {
     width: 135px;
+    margin-left: 10px;
   }
 
   button > a {

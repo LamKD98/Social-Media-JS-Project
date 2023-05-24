@@ -1,3 +1,4 @@
+import './createAccount.css'
 import React, {useState} from 'react';
 import { BrowserRouter, Navigate } from 'react-router-dom';
 import FeedServices from '../services/FeedServices';

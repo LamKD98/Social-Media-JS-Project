@@ -50,8 +50,8 @@ const PostCard = ({post, user, users, comments, specificComment, addNewComment, 
             ) : (
                 <>
                 <div className="post-section">
-                    <h2>{user.fname}:</h2>
-                    <p>{post.text}</p>
+                    <h1>{user.fname}:</h1>
+                    <h2>{post.text}</h2>
                     <img
                         src={post.gifUrl}
                         alt="Selected GIF"
