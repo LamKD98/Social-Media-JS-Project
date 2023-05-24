@@ -15,7 +15,7 @@ const HomePage = ({loggedInUser}) => {
     return (
         <div className='homepage'>
             <h1>Welcome to GifHub</h1>
-            <h3>Great to see you again {loggedInUser.fname}</h3>
+            <h3>Great to see you again, {loggedInUser.fname}!</h3>
 
         
                <Link to="/posts">
