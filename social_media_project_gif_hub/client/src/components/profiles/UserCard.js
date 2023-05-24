@@ -1,36 +1,37 @@
-import './UserCard.css'
-import React, { useState, useEffect } from 'react';
-
-import FeedServices from '../../services/FeedServices';
-import PostCard from '../feed/PostCard';
-
+import './UserCard.css';
+import React, { useState, useEffect, useRef } from 'react';
 
 function UserCard({ user }) {
-  const [posts, setPosts] = useState([]);
-
-
-
-
-
   const [songs, setSongs] = useState([]);
+  const [currentSongIndex, setCurrentSongIndex] = useState(null);
+  const audioRef = useRef(null);
+
+  const handlePlayPause = (index) => {
+    if (index === currentSongIndex) {
+      // Pause the currently playing song
+      audioRef.current.pause();
+      setCurrentSongIndex(null);
+    } else {
+      // Play the selected song
+      audioRef.current.src = songs[index].previewUrl;
+      audioRef.current.play();
+      setCurrentSongIndex(index);
+    }
+  };
 
   useEffect(() => {
-    // Fetch data from the iTunes API
     fetch('https://itunes.apple.com/gb/rss/topsongs/limit=200/json')
       .then((response) => response.json())
       .then((data) => {
-        // Extract necessary information (song titles, artist names, and images) from the API
         const songList = data.feed.entry.map((entry) => ({
           title: entry.title.label,
           artist: entry['im:artist'].label,
-          image: entry['im:image'][2].label, 
-          
+          image: entry['im:image'][2].label,
+          previewUrl: entry.link[1].attributes.href,
         }));
 
-        // Randomly select 5 songs
         const randomSongs = getRandomSongs(songList, 1);
 
-        // Update the state with the selected songs
         setSongs(randomSongs);
       })
       .catch((error) => {
@@ -38,7 +39,6 @@ function UserCard({ user }) {
       });
   }, []);
 
-  // Function to randomly select songs
   const getRandomSongs = (songList, count) => {
     const shuffledSongs = songList.sort(() => 0.5 - Math.random());
     return shuffledSongs.slice(0, count);
@@ -47,29 +47,41 @@ function UserCard({ user }) {
   return (
     <div className="profile">
       <div className="details">
-    <h2>First Name: {user.fname}</h2>
-    <br/>
-    <h2>Last Name: {user.lname}</h2>
-    <br/>
-    <h2>Email: {user.email}</h2>
-    </div>
+        <h2>First Name: {user.fname}</h2>
+        <br />
+        <h2>Last Name: {user.lname}</h2>
+        <br />
+        <h2>Email: {user.email}</h2>
+      </div>
       <div className="song">
-      <h1>{user.fname}'s song of the day </h1>
-      <ul style={{ listStyleType: 'none', padding: 0 }}>
-        {songs.map((song, index) => (
-          <li key={index}>
-            <img src={song.image} alt={`${song.title} - ${song.artist}`} />
-              <strong>{song.title}</strong>
-          </li>
-            ))}
-      </ul>
+        <h1>{user.fname}'s song of the day </h1>
+        <ul style={{ listStyleType: 'none', padding: 0 }}>
+          {songs.map((song, index) => (
+            <li key={index}>
+              <img src={song.image} alt={`${song.title} - ${song.artist}`} />
+
+              <div className="details">
+                <h3>{song.title}</h3>
+              </div>
+
+              <button
+                className="play-pause-button"
+                onClick={() => handlePlayPause(index)}
+              >
+                {currentSongIndex === index ? 'Pause' : 'Play'}
+              </button>
+
+              <audio ref={audioRef} />
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
-
-
   );
-
-        }
-
+}
 
 export default UserCard;
+
+
+
+
