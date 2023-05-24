@@ -56,40 +56,17 @@ a {
      margin-bottom: 3rem;
    }
 
-   /* create profile */
-
-   .create {
-    display: grid;
-    width: 25rem;
-    height: 30rem;
-    background-color: white;
-    border: 5px solid;
-    box-shadow: 10px 10px turquoise;
+  .homepage {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-   grid-gap: 1em;
-   text-align: center;
-  }
-
-  .create > button {
-    margin-left: 115px;
-    margin-bottom: 30px;
-    background: salmon;
-    border: 2px solid;
-  }
-
-  .homepage {
-    color: white;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
-    padding-right: 30%;
-    font-size: 23px;
+    width: 35em;
+    background-color: white;
+    border: 5px solid;
+    box-shadow: 10px 10px turquoise;
+    padding: 45px;
 }
     
 .homebutton{
@@ -123,7 +100,7 @@ a {
     /* Push the button downwards when pressed */
     transform: translateY(0);
 
-    margin-left: 17%;
+    margin-left: 40%;
   }
 
   

@@ -1,0 +1,9 @@
+.navbar {
+    display: grid;
+    margin-left: 52rem;
+    width: 25em;
+    background-color: white;
+    border: 5px solid;
+    box-shadow: 10px 10px turquoise;
+    margin-top: 10px;
+}

@@ -1,8 +1,10 @@
+import './NavBar.css'
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 function NavBar() {
   return (
+    <div className='navbar'>
     <nav style={navStyles}>
       <ul style={ulStyles}>
         <li style = {liStyles}>
@@ -16,6 +18,7 @@ function NavBar() {
         </li>
       </ul>
     </nav>
+    </div>
   );
 }
 const navStyles = {
