@@ -35,15 +35,15 @@ db.users.insertMany([
 
 db.posts.insertMany([
     {
-        text: "I love posts",
-        gifUrl: "https://media.tenor.com/J8KeZSDe_acAAAAC/dace.gif",
+        text: "Project week got me like...",
+        gifUrl: "https://media.tenor.com/5aF7np_zPEgAAAAd/pepe-why-pepe-the-frog.gif",
         postDate: "2023-05-19T14:08:14Z",
         userEmail: "euan@hotmail.com",
 
 
     },
     {
-        text: "I also love posts",
+        text: "I hate dancing Gru",
         gifUrl: "https://media.tenor.com/J8KeZSDe_acAAAAC/dace.gif",
         postDate: "2023-05-19T14:10:03Z",
         userEmail: "sam@gmail.com",
@@ -54,22 +54,16 @@ db.posts.insertMany([
 
 db.comments.insertMany([
     {
-        text: "This is a comment",
+        text: "Not me!",
         commentDate: "2023-05-19T13:24:00Z",
-        gifUrl: "sample-gif-url-here",
+        gifUrl: "https://media.tenor.com/v4uFsYl2-U0AAAAC/ur-boy-frozen-frozen.gif",
         postDate: "2023-05-19T14:08:14Z",
         userCommentEmail: "andy@hotmail.com"
     },
     {
-        text: "I also love commenting on things",
+        text: "Not as bad as this utterly cursed gif",
         commentDate: "2023-05-19T14:45:00Z",
-        postId: "2023-05-19T14:10:03Z",
-        commentId: "2023-05-19T14:45:00Z"
-    },
-    {
-        text: "This is another comment",
-        commentDate: "2023-05-19T14:45:00Z",
-        gifUrl: "another-sample-gif-url-here",
+        gifUrl: "https://media.tenor.com/Kq7XX_p6x8kAAAAd/kpop-faceapp-kpop-meme.gif",
         postDate: "2023-05-19T14:10:03Z",
         userCommentEmail: "richard@yahoo.com"
     }
