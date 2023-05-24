@@ -1,0 +1,31 @@
+.post-form {
+    display: flex;
+    align-items: center;
+    border: 10px solid;
+    box-shadow: 10px 10px turquoise;
+    background-color: white;
+    justify-content: space-evenly;
+    padding: 20px 0;
+    
+}
+
+button {
+    border: 3px solid;
+    box-shadow: 3px 3px turquoise;
+    background-color: white;
+    border-radius: 0;
+    margin: 20px;;
+}
+
+input {
+    border: 3px solid;
+    box-shadow: 3px 3px turquoise;
+    background-color: white;
+}
+
+form > textarea {
+    margin-top: 20px;
+    border: 3px solid;
+    box-shadow: 3px 3px turquoise;
+    background-color: white;
+}

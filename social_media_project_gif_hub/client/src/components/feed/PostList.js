@@ -1,3 +1,4 @@
+import './PostList.css'
 import React, {useState, useEffect} from 'react';
 import PostCard from './PostCard';
 
@@ -32,7 +33,7 @@ const PostList = ({posts, users, comments, addNewComment, postToggle, setPostTog
     )})
 
     return (
-        <div>
+        <div className="post-list">
             {postCardNodes}
         </div>
     );
