@@ -1,3 +1,4 @@
+import './CommentCard.css'
 import React from 'react';
 
 const CommentCard = ({comment, user}) => {
@@ -9,7 +10,7 @@ const CommentCard = ({comment, user}) => {
         <div className='comment-card'>
             <h4>{user.fname}:</h4>
             <p>{comment.text}</p>
-            <img
+            <img className="comment-gif"
                 src={comment.gifUrl}
                 alt="Selected GIF"
             />

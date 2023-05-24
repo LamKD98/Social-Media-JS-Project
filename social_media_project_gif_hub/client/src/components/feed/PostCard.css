@@ -1,7 +1,7 @@
 .post-card {
     border: 10px solid;
     box-shadow: 10px 10px turquoise;
-    background-color: white;
+    background-color: rgb(208, 95, 95);
     position: relative;
     top: 50%;
     left: 50%;
@@ -9,6 +9,9 @@
     padding: 30px;
 }
 
-.post-card > button {
-    
+.post-section {
+    border: 2px solid;
+    background-color: white;
+    padding: 2em;
+
 }
