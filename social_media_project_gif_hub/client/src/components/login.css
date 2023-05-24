@@ -5,7 +5,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
    grid-gap: 10px;
-   padding-right: 34rem;
+   padding-right: 10rem;
   }
 
 input {
@@ -31,11 +31,11 @@ a {
     border: none;
     margin-top: 15px;
     width: 10rem;
+    margin-right: 20rem;
   }
 
   .link-button {
     width: 135px;
-    margin-left: 10px;
   }
 
   button > a {

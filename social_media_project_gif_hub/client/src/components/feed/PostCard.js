@@ -49,6 +49,7 @@ const PostCard = ({post, user, users, comments, specificComment, addNewComment, 
                 <EditPostForm post={post} onUpdate={handlePostUpdate} postToggle={postToggle} setPostToggle={setPostToggle}/>
             ) : (
                 <>
+                <div className="post-section">
                     <h2>{user.fname}:</h2>
                     <p>{post.text}</p>
                     <img
@@ -56,6 +57,7 @@ const PostCard = ({post, user, users, comments, specificComment, addNewComment, 
                         alt="Selected GIF"
                     />
                     <button onClick={handleEditClicked}>Edit</button>
+                    </div>
                     {commentCardNodes()}
                     <CommentForm addNewComment={addNewComment} postDate={post.postDate} loggedInUser={loggedInUser}/>
                 </>
