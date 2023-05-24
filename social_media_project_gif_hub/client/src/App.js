@@ -9,6 +9,7 @@ import FeedServices from './services/FeedServices';
 import PostContainer from './containers/PostContainer';
 import Login from './components/login';
 import UserCard from './components/profiles/UserCard';
+import ErrorPage from './components/ErrorPage';
 
 
 
@@ -77,14 +78,14 @@ function App() {
         ?
           <>
             <Route path="/" element={ <Login setUser={setUser} users={users} addUser={addUser} showCreateAccount={showCreateAccount} setShowCreateAccount={setShowCreateAccount}/>} />
-            <Route path="*" element={ "404 Page Not Found" } />
+            <Route path="*" element={ <ErrorPage/> } />
           </>
           :
         <>
           <Route path="/" element={ <HomePage loggedInUser={loggedInUser} />} />
           <Route path="/profile" element={<UserCard user={loggedInUser}/>} />
           <Route path="/posts" element ={ <PostContainer  posts={posts} users={users} comments={comments} addNewComment={addNewComment} setPostToggle={setPostToggle} postToggle={postToggle} loggedInUser={loggedInUser}/>} />
-          <Route path="*" element={ "404 Page Not Found" } />
+          <Route path="*" element={ <ErrorPage/> } />
         </>
         }
         </Routes>

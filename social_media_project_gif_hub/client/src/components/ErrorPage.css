@@ -1,0 +1,19 @@
+.error-page {
+    display: grid;
+    width: 25em;
+    background-color: white;
+    border: 5px solid;
+    box-shadow: 10px 10px turquoise;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   grid-gap: 1em;
+   text-align: center;
+}
+
+.error-page-logo {
+    display: grid;
+    margin-top: 25px;
+    margin-left: 37rem;
+}
