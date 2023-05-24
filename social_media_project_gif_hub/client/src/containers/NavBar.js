@@ -19,7 +19,7 @@ function NavBar() {
   );
 }
 const navStyles = {
-  backgroundColor: '#f2f2f2',
+  backgroundColor: '#transparent',
   padding: '10px',
 };
 
