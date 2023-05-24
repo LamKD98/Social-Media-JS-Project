@@ -5,7 +5,7 @@ import FeedServices from '../../services/FeedServices';
 import EditPostForm from './EditPostForm';
 
 
-const PostCard = ({post, user, users, comments, specificComment, addNewComment, setPostToggle, postToggle }) => {
+const PostCard = ({post, user, users, comments, specificComment, addNewComment, setPostToggle, postToggle, loggedInUser}) => {
 
     const [isEditing, setIsEditing] = useState(false);
 
@@ -13,15 +13,17 @@ const PostCard = ({post, user, users, comments, specificComment, addNewComment, 
 
     const commentCardNodes = () => {
         const postComments = comments.filter((comment) =>  post.postDate === comment.postDate)
-        let commentAuthor = null
-        if(specificComment){
-            commentAuthor = users?.find((user) => user.email === specificComment.userCommentEmail) || "loading"
-        }
 
-        console.log(commentAuthor);
-        console.log(postComments);
-
+        
+        // console.log(commentAuthor);
+        // console.log(postComments);
+        
         const postCommentNodes = postComments.map((postComment, index) => {
+            let commentAuthor;
+            if(specificComment){
+                commentAuthor = users.find((user) => user.email === postComment.userCommentEmail) || "loading"
+            }
+
             return (
                 <CommentCard
                     key={index}
@@ -57,7 +59,7 @@ const PostCard = ({post, user, users, comments, specificComment, addNewComment, 
                     />
                     <button onClick={handleEditClicked}>Edit</button>
                     {commentCardNodes()}
-                    <CommentForm addNewComment={addNewComment} postDate={post.postDate}/>
+                    <CommentForm addNewComment={addNewComment} postDate={post.postDate} loggedInUser={loggedInUser}/>
                 </>
                 )}
         </div>
