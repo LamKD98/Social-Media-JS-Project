@@ -3,20 +3,41 @@ import { Link } from 'react-router-dom';
 
 function NavBar() {
   return (
-    <nav>
-      <ul style={{ listStyleType: 'none', padding: 0 }}>
-        <li>
-          <Link to="/">Home</Link>
+    <nav style={navStyles}>
+      <ul style={ulStyles}>
+        <li style = {liStyles}>
+          <Link to="/" style={linkStyles}>Home</Link>
         </li>
-        <li>
-          <Link to="/profiles">Profiles</Link>
+        <li style={liStyles}>
+          <Link to="/profiles" style={linkStyles}>Profiles</Link>
         </li>
-        <li>
-          <Link to="/posts">Posts</Link>
+        <li style={liStyles}>
+          <Link to="/posts" style={linkStyles}>Posts</Link>
         </li>
       </ul>
     </nav>
   );
 }
+const navStyles = {
+  backgroundColor: '#f2f2f2',
+  padding: '10px',
+};
+
+const ulStyles = {
+  listStyleType: 'none',
+  padding: 0,
+  display: 'flex',
+  justifyContent: 'center',
+};
+
+const liStyles = {
+  margin: '0 10px',
+};
+
+const linkStyles = {
+  textDecoration: 'none',
+  color: 'black',
+  fontWeight: 'bold',
+};
 
 export default NavBar;
