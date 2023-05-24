@@ -4,7 +4,7 @@ import FeedServices from '../../services/FeedServices';
 
 const TENOR_API_KEY = 'AIzaSyA9SS1evcudEpr89ch9I4foqWMjFLNmS78';
 
-function CommentForm({ postDate, addNewComment}) {
+function CommentForm({ postDate, addNewComment, loggedInUser}) {
   // const [commentContent, setCommentContent] = useState('');
   const [commentContent, setCommentContent] = useState('')
   const [selectedGif, setSelectedGif] = useState(null);
@@ -12,7 +12,14 @@ function CommentForm({ postDate, addNewComment}) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const newComment = { text: commentContent, gifUrl: selectedGif ? selectedGif.url : null, postDate: postDate, userCommentEmail: "euan@hotmail.com" };
+    const newComment = { 
+      text: commentContent,
+      gifUrl: selectedGif ? selectedGif.url : null,
+    };
+    newComment['commentDate'] = Date.now();
+    newComment['postDate'] = postDate;
+    console.log(loggedInUser);
+    newComment['userCommentEmail'] = loggedInUser.email;
     FeedServices.addComment(newComment)
     addNewComment(newComment);
     setCommentContent('');

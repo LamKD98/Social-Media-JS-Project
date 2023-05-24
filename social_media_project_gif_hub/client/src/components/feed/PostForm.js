@@ -14,7 +14,7 @@ const TENOR_API_KEY = 'AIzaSyA9SS1evcudEpr89ch9I4foqWMjFLNmS78';
 //     userId: "2023-05-19T14:00:00Z"
 // },
 
-function PostForm({ onPostCreate, setPostToggle, postToggle }) {
+function PostForm({ onPostCreate, setPostToggle, postToggle, loggedInUser }) {
   const [postContent, setPostContent] = useState('');
   const [gifSearchTerm, setGifSearchTerm] = useState('');
   const [gifSearchResults, setGifSearchResults] = useState([]);
@@ -29,7 +29,7 @@ function PostForm({ onPostCreate, setPostToggle, postToggle }) {
     console.dir(e)
     const newPost = { text: postContent, gifUrl: selectedGif.tenorUrl + ".gif" };
     newPost["postDate"] = Date.now()
-    newPost["userEmail"] = "euan@hotmail.com"
+    newPost["userEmail"] = loggedInUser.email
     FeedServices.addPost(newPost).then(() => {
       setPostContent('');
       setSelectedGif(null);

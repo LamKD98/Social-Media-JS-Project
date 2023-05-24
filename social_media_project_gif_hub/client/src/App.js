@@ -68,21 +68,26 @@ function App() {
 
   return (
       <div className="App">
-        { !loggedInUser 
-        
-        ?
-        <Login setUser={setUser} users={users} addUser={addUser} showCreateAccount={showCreateAccount} setShowCreateAccount={setShowCreateAccount}/>
-        :
 
         <Router >
         <NavBar />
         <Routes>
+        { !loggedInUser  
+        ?
+          <>
+           <Route path="/" element={ <Login setUser={setUser} users={users} addUser={addUser} showCreateAccount={showCreateAccount} setShowCreateAccount={setShowCreateAccount}/>} />
+           <Route path="*" element={ "404 Page Not Found" } />
+           </>
+          :
+        <>
           <Route path="/" element={ <HomePage loggedInUser={loggedInUser} />} />
           <Route path="/profile/:id" element={<ProfilePage />} />
-          <Route path="/posts" element ={ <PostContainer  posts={posts} users={users} comments={comments} addNewComment={addNewComment} setPostToggle={setPostToggle} postToggle={postToggle}/>} />
-        </Routes>
+          <Route path="/posts" element ={ <PostContainer  posts={posts} users={users} comments={comments} addNewComment={addNewComment} setPostToggle={setPostToggle} postToggle={postToggle} loggedInUser={loggedInUser}/>} />
+          <Route path="*" element={ "404 Page Not Found" } />
+        </>
+        }
+         </Routes>
         </Router>
-          }
 
       </div>
   );
