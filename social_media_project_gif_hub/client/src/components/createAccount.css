@@ -1,0 +1,31 @@
+.create-container {
+    background-image: url("../../public/Images/CreateProfileForm.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: grey;
+    background-blend-mode: multiply;
+}
+
+.create {
+   
+    display: grid;
+    width: 25rem;
+    height: 30rem;
+    background-color: white;
+    border: 5px solid;
+    box-shadow: 10px 10px turquoise;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   grid-gap: 1em;
+   text-align: center;
+  }
+
+  .create > button {
+    margin-left: 115px;
+    margin-bottom: 30px;
+    background: salmon;
+    border: 2px solid;
+  }
