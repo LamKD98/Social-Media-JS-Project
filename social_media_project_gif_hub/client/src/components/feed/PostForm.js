@@ -1,26 +1,15 @@
 import './PostForm.css';
 import React, { useState } from 'react';
 
-import GifPicker, { TenorImage } from 'gif-picker-react';
+import GifPicker from 'gif-picker-react';
 import FeedServices from '../../services/FeedServices';
 
 
 const TENOR_API_KEY = 'AIzaSyA9SS1evcudEpr89ch9I4foqWMjFLNmS78';
 
-// {
-//     text: "I love posts",
-//     gifUrl: "sample-gif-url-here",
-//     postDate: Date("2023-05-19T14:08:14Z"),
-//     postId: "2023-05-19T14:08:14Z",
-//     userId: "2023-05-19T14:00:00Z"
-// },
-
-function PostForm({ onPostCreate, setPostToggle, postToggle, loggedInUser }) {
+function PostForm({ setPostToggle, postToggle, loggedInUser }) {
   const [postContent, setPostContent] = useState('');
-  const [gifSearchTerm, setGifSearchTerm] = useState('');
-  const [gifSearchResults, setGifSearchResults] = useState([]);
   const [selectedGif, setSelectedGif] = useState(null);
-  const [ selected, setSelected ] = useState(null);
   const [toggle, setToggle] = useState(false);
 
   const handleSubmit = (e) => {
@@ -33,12 +22,10 @@ function PostForm({ onPostCreate, setPostToggle, postToggle, loggedInUser }) {
       setPostContent('');
       setSelectedGif(null);
       setPostToggle(!postToggle)
-      // window.location.reload();
     })
     .catch((err) => {
       console.error('Failed to create post', err);
     })
-    // onPostCreate(newPost);
   };
 
   const handleToggle = (e) => {

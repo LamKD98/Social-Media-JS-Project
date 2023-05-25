@@ -8,7 +8,6 @@
   position: relative;
   top: 50%;
   left: 50%;
-  /* transform: translate(-50%, -50%); */
   grid-gap: 1em;
   text-align: center;
   margin-top: 40px;
@@ -29,7 +28,6 @@
   position: relative;
   bottom: 63%;
   right: 120%;
-  /* transform: translate(-50%, -50%); */
   grid-gap: 0.5em; 
   text-align: center;
   margin-bottom: 50px;

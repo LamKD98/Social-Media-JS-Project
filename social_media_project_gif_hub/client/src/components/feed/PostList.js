@@ -1,5 +1,5 @@
 import './PostList.css'
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import PostCard from './PostCard';
 
 
@@ -9,7 +9,7 @@ const PostList = ({posts, users, comments, addNewComment, postToggle, setPostTog
 
     const postCardNodes = posts.map((post, index) => {
         const specificComment = comments.find((comment) => comment.postDate === post.postDate)
-        const specificUser = users.find((user) => user.email == post.userEmail)
+        const specificUser = users.find((user) => user.email === post.userEmail)
         const commentsByPost = comments.filter((comment) => comment.postDate === post.postDate)
 
 

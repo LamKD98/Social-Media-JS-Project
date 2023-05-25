@@ -17,9 +17,8 @@ function EditPostForm({ post, onUpdate, postToggle, setPostToggle }) {
         event.preventDefault();
         FeedServices.updatePost(editedPost)
         .then(() => {
-            onUpdate(editedPost); // Notify the parent component about the update
+            onUpdate(editedPost);
             setPostToggle(!postToggle)
-            // window.location.reload();
         })
         .catch((error) => {
             console.error(error);
