@@ -14,9 +14,9 @@ const HomePage = ({loggedInUser}) => {
             <h3>Great to see you again, {loggedInUser.fname}!</h3>
 
         
-               <Link to="/posts">
-               <button className='homebutton'>Go to your Feed</button>
-               </Link>
+                <Link to="/posts">
+                <button className='homebutton'>Go to your Feed</button>
+                </Link>
 
         </div>
     );
