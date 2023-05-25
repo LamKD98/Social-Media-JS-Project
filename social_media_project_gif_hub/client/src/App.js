@@ -2,9 +2,7 @@ import React, {useState, useEffect} from 'react';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NavBar from './containers/NavBar';
-import HomePage from './containers/HomePage'
-import ProfilePage from './components/profiles/ProfilePage';
-import PostList from './components/feed/PostList'
+import HomePage from './containers/HomePage';
 import FeedServices from './services/FeedServices';
 import PostContainer from './containers/PostContainer';
 import Login from './components/login/login';
@@ -36,26 +34,10 @@ function App() {
   
   }, []);
 
-  // useEffect(() => {
-  //   setComments(comments);
-  // }, [comments])
-
-  // useEffect(() => {
-  //   setPosts(posts)
-  // }, [posts])
-
-  // const addNewPost = (post) => {
-  //   setPosts([...posts, post])
-  // }
-
   const addNewComment = (comment) => {
     console.log(comment);
     setComments([...comments, comment])
   }
-
-  // if (posts.length === 0 ) return "loading"
-  // if (users.length === 0 ) return "loading"
-  // if (comments.length === 0 ) return "loading"
 
   const setUser = (newUser) => {
     setLoggedInUser(newUser)
@@ -73,22 +55,22 @@ function App() {
 
         <Router >
         <NavBar />
-        <Routes>
-        { !loggedInUser  
-        ?
-          <>
-            <Route path="/" element={ <Login setUser={setUser} users={users} addUser={addUser} showCreateAccount={showCreateAccount} setShowCreateAccount={setShowCreateAccount}/>} />
-            <Route path="*" element={ <ErrorPage/> } />
-          </>
-          :
-        <>
-          <Route path="/" element={ <HomePage loggedInUser={loggedInUser} />} />
-          <Route path="/profile" element={<UserCard user={loggedInUser}/>} />
-          <Route path="/posts" element ={ <PostContainer  posts={posts} users={users} comments={comments} addNewComment={addNewComment} setPostToggle={setPostToggle} postToggle={postToggle} loggedInUser={loggedInUser}/>} />
-          <Route path="*" element={ <ErrorPage/> } />
-        </>
-        }
-        </Routes>
+          <Routes>
+          { !loggedInUser  
+          ?
+            <>
+              <Route path="/" element={ <Login setUser={setUser} users={users} addUser={addUser} showCreateAccount={showCreateAccount} setShowCreateAccount={setShowCreateAccount}/>} />
+              <Route path="*" element={ <ErrorPage/> } />
+            </>
+            :
+            <>
+              <Route path="/" element={ <HomePage loggedInUser={loggedInUser} />} />
+              <Route path="/profile" element={<UserCard user={loggedInUser}/>} />
+              <Route path="/posts" element ={ <PostContainer  posts={posts} users={users} comments={comments} addNewComment={addNewComment} setPostToggle={setPostToggle} postToggle={postToggle} loggedInUser={loggedInUser}/>} />
+              <Route path="*" element={ <ErrorPage/> } />
+            </>
+          }
+          </Routes>
         </Router>
 
       </div>
