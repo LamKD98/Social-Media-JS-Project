@@ -7,9 +7,9 @@ import ProfilePage from './components/profiles/ProfilePage';
 import PostList from './components/feed/PostList'
 import FeedServices from './services/FeedServices';
 import PostContainer from './containers/PostContainer';
-import Login from './components/login';
+import Login from './components/login/login';
 import UserCard from './components/profiles/UserCard';
-import ErrorPage from './components/ErrorPage';
+import ErrorPage from './components/login/ErrorPage';
 
 
 

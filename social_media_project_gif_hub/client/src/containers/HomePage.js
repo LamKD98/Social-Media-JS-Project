@@ -1,10 +1,6 @@
 import './Homepage.css'
-import React, {useState} from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, Link} from 'react-router-dom';
-import PostContainer from './PostContainer';
-import ProfilePage from '../components/profiles/ProfilePage';
-import Login from '../components/login';
-import CreateAccount from '../components/createAccount'
+import React from 'react';
+import { BrowserRouter as Link} from 'react-router-dom';
 
 
 const HomePage = ({loggedInUser}) => {

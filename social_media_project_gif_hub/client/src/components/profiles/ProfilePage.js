@@ -9,7 +9,6 @@ function ProfilePage({ match }) {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // Fetch user data when component mounts
     FeedService.getUser(match.params.id)
       .then(data => setUser(data))
       .catch(err => console.error(err));

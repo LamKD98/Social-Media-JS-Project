@@ -2,7 +2,6 @@ import './PostCard.css'
 import React, { useState } from 'react';
 import CommentForm from './CommentForm';
 import CommentCard from './CommentCard';
-import FeedServices from '../../services/FeedServices';
 import EditPostForm from './EditPostForm';
 
 

@@ -12,7 +12,6 @@ const CommentList = () => {
         FeedServices.getComments().then(setComments);
         FeedServices.getPosts().then(setPosts);
         FeedServices.getUsers().then(setUsers);
-        // console.log(comments);
     }, []);
 
     return (

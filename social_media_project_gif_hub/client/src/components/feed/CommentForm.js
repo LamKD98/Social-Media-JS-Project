@@ -5,7 +5,6 @@ import FeedServices from '../../services/FeedServices';
 const TENOR_API_KEY = 'AIzaSyA9SS1evcudEpr89ch9I4foqWMjFLNmS78';
 
 function CommentForm({ postDate, addNewComment, loggedInUser}) {
-  // const [commentContent, setCommentContent] = useState('');
   const [commentContent, setCommentContent] = useState('')
   const [selectedGif, setSelectedGif] = useState(null);
   const [toggle, setToggle] = useState(false);
